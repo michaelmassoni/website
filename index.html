@@ -5,55 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>michaelmassoni.com</title>
 <style>
-  body {
-    background: #000000;
-    color: #33ff33;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 2rem;
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.5;
-  }
-  a {
-    color: #00ff00;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  h1, h2 {
-    border-bottom: 1px solid #33ff33;
-    padding-bottom: 0.25rem;
-  }
-  hr {
-    border: 1px solid #33ff33;
-    margin: 2rem 0;
-  }
-  .prompt {
-    color: #00ff00;
-  }
-  .blinking-caret {
-    display: inline-block;
-    width: 10px;
-    background-color: #33ff33;
-    margin-left: 2px;
-    animation: blink 1s steps(1) infinite;
-  }
-  @keyframes blink {
-    0%, 50% { background-color: #33ff33; }
-    51%, 100% { background-color: transparent; }
-  }
+body {
+  background-color: #1e1e1e;
+  color: #c0fcb3;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+a {
+  color: #8affef;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2 {
+  border-bottom: 1px solid #4caf50;
+  padding-bottom: 0.25rem;
+  color: #9cffb3;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #3a3a3a;
+  margin: 2rem 0;
+}
+
+.prompt {
+  color: #7fffd4;
+}
+
+.blinking-caret {
+  display: inline-block;
+  width: 10px;
+  background-color: #c0fcb3;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { background-color: #c0fcb3; }
+  51%, 100% { background-color: transparent; }
+}
+
+footer {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 3rem;
+}
+
 </style>
 </head>
 <body>
-  <h1>user@retro-blog:~$ <span class="blinking-caret"></span></h1>
-  <p>welcome to my retro terminal style blog.</p>
+  <h1>[michaelmassoni.com] $</h1>
+  <h2>posts</h2>
+  <p>there's nothing here yet!</p>
   <hr />
-  <h2>latest post</h2>
-  <p>this is where i'll put my blog posts or updates.</p>
-  <hr />
-  <footer>
-    <p>made with ♥ &lt;3</p>
-  </footer>
 </body>
 </html>
