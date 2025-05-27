@@ -62,14 +62,26 @@ footer {
   padding-top: 1rem;
 }
 
-.back-link {
-  display: inline-block;
+.nav-path {
+  color: #888;
   margin-bottom: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.nav-path a {
+  color: #8affef;
+}
+
+.nav-path .separator {
+  margin: 0 0.5rem;
+  color: #4caf50;
 }
 </style>
 </head>
 <body>
-  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="nav-path">
+    <a href="index.html">~</a><span class="separator">/</span>about
+  </div>
   <h1>[michaelmassoni.com] ~/about<span class="blinking-caret"></span></h1>
   
   <p>This is a placeholder about section.</p>
