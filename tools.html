@@ -94,6 +94,42 @@ footer {
   color: #888;
   margin-top: 0.25rem;
 }
+
+.tool-tag {
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 3px;
+  background-color: #252525;
+  color: #888;
+}
+
+.tool-tag.free {
+  background-color: #1a472a;
+  color: #9cffb3;
+}
+
+.tool-tag.opensource {
+  background-color: #1a472a;
+  color: #9cffb3;
+}
+
+.tool-tag.proprietary {
+  background-color: #472a1a;
+  color: #ffb39c;
+}
+
+.tool-tag.paid {
+  background-color: #472a1a;
+  color: #ffb39c;
+}
+
+.intro-text {
+  color: #888;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
@@ -102,14 +138,28 @@ footer {
   </div>
   <h1>[michaelmassoni.com] ~/tools<span class="blinking-caret"></span></h1>
   
+  <div class="intro-text">
+    An evolving list of my favourite tools on the web.
+  </div>
+  
   <ul class="tool-list">
     <li>
       <a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a>
+      <span class="tool-tag free">Free</span>
+      <span class="tool-tag opensource">Open Source</span>
       <div class="tool-description">A powerful web app for data analysis, encoding/decoding, encryption/decryption, and data manipulation. Perfect for cybersecurity tasks, data processing, and debugging.</div>
     </li>
     <li>
       <a href="https://excalidraw.com/" target="_blank">Excalidraw</a>
+      <span class="tool-tag free">Free</span>
+      <span class="tool-tag opensource">Open Source</span>
       <div class="tool-description">A virtual whiteboard for sketching hand-drawn diagrams. Great for system design, architecture diagrams, and quick visual explanations.</div>
+    </li>
+    <li>
+      <a href="https://hemingwayapp.com/" target="_blank">Hemingway Editor</a>
+      <span class="tool-tag free">Free</span>
+      <span class="tool-tag proprietary">Proprietary</span>
+      <div class="tool-description">A writing tool that helps make your writing bold and clear. It highlights complex sentences, adverbs, passive voice, and suggests simpler alternatives.</div>
     </li>
   </ul>
   
