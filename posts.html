@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home - michaelmassoni.com</title>
+<title>Posts - michaelmassoni.com</title>
 <style>
 body {
   background-color: #1e1e1e;
@@ -36,23 +36,6 @@ hr {
   margin: 2rem 0;
 }
 
-.prompt {
-  color: #7fffd4;
-}
-
-.blinking-caret {
-  display: inline-block;
-  width: 10px;
-  background-color: #c0fcb3;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% { background-color: #c0fcb3; }
-  51%, 100% { background-color: transparent; }
-}
-
 .social-links {
   margin-top: 2rem;
 }
@@ -79,16 +62,40 @@ footer {
   padding-top: 1rem;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 1.5rem;
+}
+
+.post-list a {
+  font-weight: bold;
+}
+
+.post-date {
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 0.25rem;
+}
 </style>
 </head>
 <body>
-  <h1>[michaelmassoni.com] ~<span class="blinking-caret"></span></h1>
+  <a href="index.html" class="back-link">← Back to home</a>
+  <h1>[michaelmassoni.com] ~/posts<span class="blinking-caret"></span></h1>
   
-  <nav>
-    <a href="about.html">about</a> | 
-    <a href="posts.html">posts</a> | 
-    <a href="tools.html">tools</a>
-  </nav>
+  <ul class="post-list">
+    <li>
+      <p>There's nothing here yet!</p>
+    </li>
+  </ul>
   
   <hr />
   
@@ -109,4 +116,4 @@ footer {
     </div>
   </footer>
 </body>
-</html>
+</html> 
