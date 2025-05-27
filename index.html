@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>michaelmassoni.com</title>
+<style>
+  body {
+    background: #000000;
+    color: #33ff33;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.5;
+  }
+  a {
+    color: #00ff00;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  h1, h2 {
+    border-bottom: 1px solid #33ff33;
+    padding-bottom: 0.25rem;
+  }
+  hr {
+    border: 1px solid #33ff33;
+    margin: 2rem 0;
+  }
+  .prompt {
+    color: #00ff00;
+  }
+  .blinking-caret {
+    display: inline-block;
+    width: 10px;
+    background-color: #33ff33;
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink {
+    0%, 50% { background-color: #33ff33; }
+    51%, 100% { background-color: transparent; }
+  }
+</style>
+</head>
+<body>
+  <h1>user@retro-blog:~$ <span class="blinking-caret"></span></h1>
+  <p>welcome to my retro terminal style blog.</p>
+  <hr />
+  <h2>latest post</h2>
+  <p>this is where i'll put my blog posts or updates.</p>
+  <hr />
+  <footer>
+    <p>made with ♥ &lt;3</p>
+  </footer>
+</body>
+</html>
