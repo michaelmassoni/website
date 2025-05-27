@@ -36,23 +36,6 @@ hr {
   margin: 2rem 0;
 }
 
-.prompt {
-  color: #7fffd4;
-}
-
-.blinking-caret {
-  display: inline-block;
-  width: 10px;
-  background-color: #c0fcb3;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% { background-color: #c0fcb3; }
-  51%, 100% { background-color: transparent; }
-}
-
 .social-links {
   margin-top: 2rem;
 }
@@ -79,16 +62,85 @@ footer {
   padding-top: 1rem;
 }
 
+.prompt {
+  color: #7fffd4;
+}
+
+.blinking-caret {
+  display: inline-block;
+  width: 10px;
+  background-color: #c0fcb3;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { background-color: #c0fcb3; }
+  51%, 100% { background-color: transparent; }
+}
+
+.directory-listing {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #252525;
+  border-radius: 4px;
+}
+
+.directory-listing .header {
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.directory-listing .item {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.directory-listing .item::before {
+  content: "📁";
+  margin-right: 0.5rem;
+}
+
+.directory-listing .item a {
+  color: #8affef;
+}
+
+.directory-listing .item .size {
+  color: #888;
+  margin-left: auto;
+  font-size: 0.9em;
+}
+
+.welcome-message {
+  color: #888;
+  margin: 2rem 0;
+  font-style: italic;
+}
 </style>
 </head>
 <body>
   <h1>[michaelmassoni.com] ~<span class="blinking-caret"></span></h1>
   
-  <nav>
-    <a href="about.html">about</a> | 
-    <a href="posts.html">posts</a> | 
-    <a href="tools.html">tools</a>
-  </nav>
+  <div class="welcome-message">
+    Welcome to my digital home. Feel free to explore the directories below.
+  </div>
+  
+  <div class="directory-listing">
+    <div class="header">total 3</div>
+    <div class="item">
+      <a href="about.html">about</a>
+      <span class="size">4.0K</span>
+    </div>
+    <div class="item">
+      <a href="posts.html">posts</a>
+      <span class="size">4.0K</span>
+    </div>
+    <div class="item">
+      <a href="tools.html">tools</a>
+      <span class="size">4.0K</span>
+    </div>
+  </div>
   
   <hr />
   
