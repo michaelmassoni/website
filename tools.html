@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home - michaelmassoni.com</title>
+<title>Tools - michaelmassoni.com</title>
 <style>
 body {
   background-color: #1e1e1e;
@@ -36,23 +36,6 @@ hr {
   margin: 2rem 0;
 }
 
-.prompt {
-  color: #7fffd4;
-}
-
-.blinking-caret {
-  display: inline-block;
-  width: 10px;
-  background-color: #c0fcb3;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% { background-color: #c0fcb3; }
-  51%, 100% { background-color: transparent; }
-}
-
 .social-links {
   margin-top: 2rem;
 }
@@ -79,18 +62,45 @@ footer {
   padding-top: 1rem;
 }
 
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.tool-list {
+  list-style: none;
+  padding: 0;
+}
+
+.tool-list li {
+  margin-bottom: 1.5rem;
+}
+
+.tool-list a {
+  font-weight: bold;
+}
+
+.tool-description {
+  color: #888;
+  margin-top: 0.25rem;
+}
 </style>
 </head>
 <body>
-  <h1>[michaelmassoni.com] ~<span class="blinking-caret"></span></h1>
+  <a href="index.html" class="back-link">← Back to home</a>
+  <h1>[michaelmassoni.com] ~/tools<span class="blinking-caret"></span></h1>
   
-  <nav>
-    <a href="about.html">about</a> | 
-    <a href="tools.html">tools</a>
-  </nav>
+  <ul class="tool-list">
+    <li>
+      <a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a>
+      <div class="tool-description">A powerful web app for data analysis, encoding/decoding, encryption/decryption, and data manipulation. Perfect for cybersecurity tasks, data processing, and debugging.</div>
+    </li>
+    <li>
+      <a href="https://excalidraw.com/" target="_blank">Excalidraw</a>
+      <div class="tool-description">A virtual whiteboard for sketching hand-drawn diagrams. Great for system design, architecture diagrams, and quick visual explanations.</div>
+    </li>
+  </ul>
   
-  <h2>~/posts/</h2>
-  <p>There's nothing here yet!</p>
   <hr />
   
   <footer>
@@ -110,4 +120,4 @@ footer {
     </div>
   </footer>
 </body>
-</html>
+</html> 
