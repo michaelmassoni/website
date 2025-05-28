@@ -300,9 +300,7 @@ footer {
 
 /* Back to top button */
 .back-to-top {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   color: #888;
   font-size: 0.9em;
   margin-top: 2rem;
@@ -316,10 +314,4 @@ footer {
   color: #8affef;
   border-color: #4caf50;
   text-decoration: none;
-}
-
-.back-to-top svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
 } 
