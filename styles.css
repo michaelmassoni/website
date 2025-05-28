@@ -202,4 +202,28 @@ footer {
   color: #888;
   font-size: 0.9em;
   margin-top: 0.25rem;
+}
+
+/* About page styles */
+.about-content {
+  margin: 2rem 0;
+}
+
+.about-section {
+  margin-bottom: 2.5rem;
+}
+
+.about-section h2 {
+  color: #8affef;
+  font-size: 1.4em;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
 } 
