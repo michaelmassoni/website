@@ -1,0 +1,16 @@
+# Enable HSTS (Strict Transport Security)
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Content Security Policy
+# Since your site is static and only uses local CSS and no external resources, we can set a very strict policy
+Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; frame-ancestors 'none';"
+
+# Prevent clickjacking
+Header always set X-Frame-Options "DENY"
+
+# Permissions Policy
+Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+# Additional security headers
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin" 
