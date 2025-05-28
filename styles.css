@@ -102,28 +102,32 @@ footer {
   display: flex;
   align-items: center;
   margin: 0.5rem 0;
-  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .directory-listing .item::before {
   content: "📁";
-  margin-right: 0.5rem;
+  flex-shrink: 0;
 }
 
 .directory-listing .item.file::before {
   content: "📄";
-  margin-right: 0.5rem;
+  flex-shrink: 0;
 }
 
 .directory-listing .item a {
   color: #8affef;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .directory-listing .item .size {
   color: #888;
-  margin-left: auto;
   font-size: 0.9em;
+  flex-shrink: 0;
 }
 
 /* Welcome message */
@@ -246,13 +250,20 @@ footer {
     font-size: 1.5rem;
   }
 
+  .directory-listing {
+    padding: 0.75rem;
+  }
+
   .directory-listing .item {
-    flex-direction: column;
-    align-items: flex-start;
+    margin: 0.4rem 0;
+  }
+
+  .directory-listing .item a {
+    font-size: 0.95em;
   }
 
   .directory-listing .item .size {
-    margin-left: 0;
+    font-size: 0.85em;
   }
 
   .social-links {
@@ -285,4 +296,30 @@ footer {
   .nav-path {
     font-size: 0.9em;
   }
+}
+
+/* Back to top button */
+.back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  font-size: 0.9em;
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+  color: #8affef;
+  border-color: #4caf50;
+  text-decoration: none;
+}
+
+.back-to-top svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 } 
