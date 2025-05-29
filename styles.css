@@ -16,13 +16,17 @@ html body {
   align-items: center;
   margin-bottom: 2rem;
   width: 100%;
+  position: relative;
 }
 
 /* Website name */
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  margin-left: auto;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
 }
 
 /* Navigation */
