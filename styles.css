@@ -66,7 +66,7 @@ hr {
 /* Navigation */
 .nav-path {
   color: #888;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
 }
@@ -78,20 +78,6 @@ hr {
 .nav-path .separator {
   margin: 0 0.5rem;
   color: #4caf50;
-}
-
-/* Blinking caret */
-.blinking-caret {
-  display: inline-block;
-  width: 10px;
-  background-color: #c0fcb3;
-  margin-left: 2px;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% { background-color: #c0fcb3; }
-  51%, 100% { background-color: transparent; }
 }
 
 /* Footer */
