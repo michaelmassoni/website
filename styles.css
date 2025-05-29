@@ -10,14 +10,23 @@ html body {
   position: relative;
 }
 
-/* Website name in top right */
+/* Navigation container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Website name */
 .website-name {
-  position: absolute;
-  top: 0;
-  right: 0;
   color: #9cffb3;
   font-size: 1.1em;
-  margin: 1rem;
+}
+
+/* Navigation */
+.nav-path {
+  color: #888;
 }
 
 /* Typography */
@@ -47,6 +56,8 @@ hr {
 .nav-path {
   color: #888;
   margin-bottom: 2rem;
+  padding-top: 0;
+  line-height: 1;
 }
 
 .nav-path a {
