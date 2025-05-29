@@ -12,8 +12,8 @@ html body {
 
 /* Navigation container */
 .nav-container {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
   width: 100%;
@@ -23,19 +23,16 @@ html body {
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  text-align: right;
-  grid-column: 2;
-  justify-self: end;
+  order: 2;
 }
 
 /* Navigation */
 .nav-path {
   color: #888;
-  grid-column: 1;
-  justify-self: start;
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
+  order: 1;
 }
 
 /* Typography */
