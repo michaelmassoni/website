@@ -13,7 +13,6 @@ html body {
 /* Navigation container */
 .nav-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
   width: 100%;
@@ -23,7 +22,7 @@ html body {
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  order: 2;
+  margin-left: auto;
 }
 
 /* Navigation */
@@ -32,7 +31,6 @@ html body {
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
-  order: 1;
 }
 
 /* Typography */
