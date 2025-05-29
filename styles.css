@@ -19,6 +19,7 @@ html body {
   width: 100%;
   white-space: nowrap;
   gap: 1rem;
+  position: relative;
 }
 
 /* Website name */
@@ -28,7 +29,9 @@ html body {
   text-align: right;
   flex-shrink: 0;
   white-space: nowrap;
-  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /* Navigation */
@@ -37,6 +40,8 @@ html body {
   flex-shrink: 0;
   white-space: nowrap;
   margin-bottom: 0;
+  padding-top: 0;
+  line-height: 1;
 }
 
 /* Typography */
