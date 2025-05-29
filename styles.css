@@ -208,6 +208,11 @@ footer {
 /* Blog post */
 .blog-post {
   margin: 2rem 0;
+  color: #888;
+}
+
+.blog-post * {
+  color: inherit;
 }
 
 .blog-post .post-meta {
@@ -223,7 +228,7 @@ footer {
   padding-bottom: 0.25rem;
 }
 
-article.blog-post p {
+.blog-post p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
   color: #888;
