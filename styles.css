@@ -23,10 +23,9 @@ html body {
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 /* Navigation */
