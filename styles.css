@@ -155,10 +155,11 @@ footer {
   word-wrap: break-word;
 }
 
-.tool-list a {
+.tool-list a, .section-heading {
   font-weight: bold;
   display: inline-block;
   margin-bottom: 0.25rem;
+  color: #8affef;
 }
 
 .tool-description {
