@@ -25,55 +25,57 @@
     An evolving list of my favourite tools on the web.
   </div>
   
-  <div class="filter-bar">
-    <input type="radio" name="filter" id="filter-all" class="filter-input" checked>
-    <label for="filter-all" class="filter-btn">All</label>
+  <div class="filter-container">
+    <div class="filter-bar">
+      <input type="radio" name="filter" id="filter-all" class="filter-input" checked>
+      <label for="filter-all" class="filter-btn">All</label>
+      
+      <input type="radio" name="filter" id="filter-free" class="filter-input">
+      <label for="filter-free" class="filter-btn">Free</label>
+      
+      <input type="radio" name="filter" id="filter-paid" class="filter-input">
+      <label for="filter-paid" class="filter-btn">Paid</label>
+      
+      <input type="radio" name="filter" id="filter-opensource" class="filter-input">
+      <label for="filter-opensource" class="filter-btn">Open Source</label>
+      
+      <input type="radio" name="filter" id="filter-proprietary" class="filter-input">
+      <label for="filter-proprietary" class="filter-btn">Proprietary</label>
+    </div>
     
-    <input type="radio" name="filter" id="filter-free" class="filter-input">
-    <label for="filter-free" class="filter-btn">Free</label>
-    
-    <input type="radio" name="filter" id="filter-paid" class="filter-input">
-    <label for="filter-paid" class="filter-btn">Paid</label>
-    
-    <input type="radio" name="filter" id="filter-opensource" class="filter-input">
-    <label for="filter-opensource" class="filter-btn">Open Source</label>
-    
-    <input type="radio" name="filter" id="filter-proprietary" class="filter-input">
-    <label for="filter-proprietary" class="filter-btn">Proprietary</label>
+    <ul class="tool-list">
+      <li data-tags="free opensource">
+        <a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a>
+        <span class="tool-tag free">Free</span>
+        <span class="tool-tag opensource">Open Source</span>
+        <div class="tool-description">A powerful web app for data analysis, encoding/decoding, encryption/decryption, and data manipulation. Perfect for cybersecurity tasks, data processing, and debugging.</div>
+      </li>
+      <li data-tags="free opensource">
+        <a href="https://excalidraw.com/" target="_blank">Excalidraw</a>
+        <span class="tool-tag free">Free</span>
+        <span class="tool-tag opensource">Open Source</span>
+        <div class="tool-description">A virtual whiteboard for sketching hand-drawn diagrams. Great for system design, architecture diagrams, and quick visual explanations.</div>
+      </li>
+      <li data-tags="free proprietary">
+        <a href="https://hemingwayapp.com/" target="_blank">Hemingway Editor</a>
+        <span class="tool-tag free">Free</span>
+        <span class="tool-tag proprietary">Proprietary</span>
+        <div class="tool-description">A writing tool that helps make your writing bold and clear. It highlights complex sentences, adverbs, passive voice, and suggests simpler alternatives.</div>
+      </li>
+      <li data-tags="free proprietary">
+        <a href="https://www.phishtool.com/" target="_blank">PhishTool</a>
+        <span class="tool-tag free">Free</span>
+        <span class="tool-tag proprietary">Proprietary</span>
+        <div class="tool-description">A powerful phishing incident response platform that combines threat intelligence, OSINT, and email metadata analysis. Essential for security teams and analysts investigating phishing campaigns and email-born threats.</div>
+      </li>
+      <li data-tags="free opensource">
+        <a href="https://rxresu.me/" target="_blank">Reactive Resume</a>
+        <span class="tool-tag free">Free</span>
+        <span class="tool-tag opensource">Open Source</span>
+        <div class="tool-description">A resume builder that simplifies the process of creating, updating, and sharing your resume. Features include dozens of templates to choose from, real-time preview, and the ability to export to PDF.</div>
+      </li>
+    </ul>
   </div>
-  
-  <ul class="tool-list">
-    <li data-tags="free opensource">
-      <a href="https://gchq.github.io/CyberChef/" target="_blank">CyberChef</a>
-      <span class="tool-tag free">Free</span>
-      <span class="tool-tag opensource">Open Source</span>
-      <div class="tool-description">A powerful web app for data analysis, encoding/decoding, encryption/decryption, and data manipulation. Perfect for cybersecurity tasks, data processing, and debugging.</div>
-    </li>
-    <li data-tags="free opensource">
-      <a href="https://excalidraw.com/" target="_blank">Excalidraw</a>
-      <span class="tool-tag free">Free</span>
-      <span class="tool-tag opensource">Open Source</span>
-      <div class="tool-description">A virtual whiteboard for sketching hand-drawn diagrams. Great for system design, architecture diagrams, and quick visual explanations.</div>
-    </li>
-    <li data-tags="free proprietary">
-      <a href="https://hemingwayapp.com/" target="_blank">Hemingway Editor</a>
-      <span class="tool-tag free">Free</span>
-      <span class="tool-tag proprietary">Proprietary</span>
-      <div class="tool-description">A writing tool that helps make your writing bold and clear. It highlights complex sentences, adverbs, passive voice, and suggests simpler alternatives.</div>
-    </li>
-    <li data-tags="free proprietary">
-      <a href="https://www.phishtool.com/" target="_blank">PhishTool</a>
-      <span class="tool-tag free">Free</span>
-      <span class="tool-tag proprietary">Proprietary</span>
-      <div class="tool-description">A powerful phishing incident response platform that combines threat intelligence, OSINT, and email metadata analysis. Essential for security teams and analysts investigating phishing campaigns and email-born threats.</div>
-    </li>
-    <li data-tags="free opensource">
-      <a href="https://rxresu.me/" target="_blank">Reactive Resume</a>
-      <span class="tool-tag free">Free</span>
-      <span class="tool-tag opensource">Open Source</span>
-      <div class="tool-description">A resume builder that simplifies the process of creating, updating, and sharing your resume. Features include dozens of templates to choose from, real-time preview, and the ability to export to PDF.</div>
-    </li>
-  </ul>
   
   <a href="#" class="back-to-top">Back to top</a>
   

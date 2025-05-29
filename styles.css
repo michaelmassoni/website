@@ -163,11 +163,15 @@ footer {
 }
 
 /* Filter bar */
-.filter-bar {
+.filter-container {
   margin: 1rem 0 2rem 0;
+}
+
+.filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .filter-input {
