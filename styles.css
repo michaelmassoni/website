@@ -9,11 +9,21 @@ html body {
   color: #888 !important;
 }
 
+/* Website name in top right */
+.website-name {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #9cffb3;
+  font-size: 1.1em;
+}
+
 /* Typography */
 h1, h2 {
   border-bottom: 1px solid #4caf50;
   padding-bottom: 0.25rem;
   color: #9cffb3;
+  margin-top: 2rem;
 }
 
 a {
