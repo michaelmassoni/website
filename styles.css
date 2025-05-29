@@ -202,28 +202,28 @@ footer {
 }
 
 /* Hide all items by default */
-.tool-list li {
+.tool-item {
   display: none;
 }
 
 /* Show items based on selected filter */
-#filter-all:checked ~ .tool-list li {
+#filter-all:checked ~ .tool-list .tool-item {
   display: block;
 }
 
-#filter-free:checked ~ .tool-list li[data-tags~="free"] {
+#filter-free:checked ~ .tool-list .tool-item.free {
   display: block;
 }
 
-#filter-paid:checked ~ .tool-list li[data-tags~="paid"] {
+#filter-paid:checked ~ .tool-list .tool-item.paid {
   display: block;
 }
 
-#filter-opensource:checked ~ .tool-list li[data-tags~="opensource"] {
+#filter-opensource:checked ~ .tool-list .tool-item.opensource {
   display: block;
 }
 
-#filter-proprietary:checked ~ .tool-list li[data-tags~="proprietary"] {
+#filter-proprietary:checked ~ .tool-list .tool-item.proprietary {
   display: block;
 }
 
