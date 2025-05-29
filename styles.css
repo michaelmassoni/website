@@ -16,17 +16,24 @@ html body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  width: 100%;
+  white-space: nowrap;
 }
 
 /* Website name */
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
+  text-align: right;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Navigation */
 .nav-path {
   color: #888;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Typography */
