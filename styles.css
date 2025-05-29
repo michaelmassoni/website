@@ -260,21 +260,24 @@ body .blog-post h2 {
   padding-bottom: 0.25rem;
 }
 
+body .blog-post p,
+body .blog-post ul,
+body .blog-post li {
+  color: #888 !important;
+}
+
 body .blog-post p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  color: #888;
 }
 
 body .blog-post ul {
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
-  color: #888;
 }
 
 body .blog-post li {
   margin-bottom: 0.5rem;
-  color: #888;
 }
 
 /* Responsive Design */
