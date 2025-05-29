@@ -14,16 +14,13 @@ html body {
 .nav-container {
   width: 100%;
   margin-bottom: 2rem;
-  clear: both;
 }
 
 /* Website name */
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  text-align: right;
-  display: inline-block;
-  width: 50%;
+  margin-bottom: 0.5rem;
 }
 
 /* Navigation */
@@ -32,8 +29,15 @@ html body {
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
-  display: inline-block;
-  width: 50%;
+}
+
+.nav-path a {
+  color: #8affef;
+}
+
+.nav-path .separator {
+  margin: 0 0.5rem;
+  color: #4caf50;
 }
 
 /* Typography */
