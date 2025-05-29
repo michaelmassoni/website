@@ -12,19 +12,18 @@ html body {
 
 /* Navigation container */
 .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
   margin-bottom: 2rem;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 /* Website name */
 .website-name {
   color: #9cffb3;
   font-size: 1.1em;
-  margin-left: auto;
+  float: right;
 }
 
 /* Navigation */
@@ -33,6 +32,7 @@ html body {
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
+  float: left;
 }
 
 /* Typography */
