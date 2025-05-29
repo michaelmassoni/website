@@ -12,12 +12,11 @@ html body {
 
 /* Navigation container */
 .nav-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   margin-bottom: 2rem;
   width: 100%;
-  white-space: nowrap;
 }
 
 /* Website name */
@@ -25,15 +24,15 @@ html body {
   color: #9cffb3;
   font-size: 1.1em;
   text-align: right;
-  flex-shrink: 0;
-  white-space: nowrap;
+  grid-column: 2;
+  justify-self: end;
 }
 
 /* Navigation */
 .nav-path {
   color: #888;
-  flex-shrink: 0;
-  white-space: nowrap;
+  grid-column: 1;
+  justify-self: start;
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
