@@ -207,6 +207,7 @@ footer {
 /* Blog post */
 .blog-post {
   margin: 2rem 0;
+  color: #888;
 }
 
 .blog-post .post-meta {
@@ -217,27 +218,26 @@ footer {
 .blog-post h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #8affef;
-}
-
-.blog-post p,
-.blog-post ul,
-.blog-post li {
-  color: #888;
+  color: #9cffb3;
+  border-bottom: 1px solid #4caf50;
+  padding-bottom: 0.25rem;
 }
 
 .blog-post p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
+  color: #888;
 }
 
 .blog-post ul {
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
+  color: #888;
 }
 
 .blog-post li {
   margin-bottom: 0.5rem;
+  color: #888;
 }
 
 /* Back to top button */
