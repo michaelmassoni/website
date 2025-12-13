@@ -41,7 +41,8 @@ html body {
 }
 
 /* Typography */
-h1, h2 {
+h1,
+h2 {
   border-bottom: 1px solid #4caf50;
   padding-bottom: 0.25rem;
   color: #9cffb3;
@@ -241,6 +242,12 @@ footer {
   border: 1px solid #af504c;
 }
 
+.tool-tag.fork {
+  background-color: #2a3b47;
+  color: #9cd8ff;
+  border: 1px solid #4c8faf;
+}
+
 /* Post list */
 .post-list {
   list-style: none;
@@ -397,4 +404,4 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-} 
+}
