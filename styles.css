@@ -1,96 +1,276 @@
-/* Base styles */
+/* =============================================================================
+   RETRO CRT TERMINAL THEME
+   A minimalist terminal aesthetic with CRT effects
+   ============================================================================= */
+
+/* Font is loaded via <link> tag in HTML for non-blocking load */
+
+/* =============================================================================
+   CSS CUSTOM PROPERTIES (Variables)
+   ============================================================================= */
+:root {
+  /* Colors */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #252525;
+  --text-primary: #9a9a9a;
+  --text-muted: #888;
+  --accent-green: #9cffb3;
+  --accent-cyan: #8affef;
+  --accent-border: #4caf50;
+  --border-subtle: #3a3a3a;
+
+  /* Tag colors */
+  --tag-free-bg: #1a472a;
+  --tag-free-text: #9cffb3;
+  --tag-free-border: #4caf50;
+  --tag-paid-bg: #472a1a;
+  --tag-paid-text: #ffb39c;
+  --tag-paid-border: #af504c;
+  --tag-fork-bg: #2a3b47;
+  --tag-fork-text: #9cd8ff;
+  --tag-fork-border: #4c8faf;
+
+  /* Glow effects */
+  --glow-green: rgba(156, 255, 179, 0.5);
+  --glow-green-soft: rgba(156, 255, 179, 0.3);
+  --glow-green-faint: rgba(156, 255, 179, 0.1);
+  --glow-cyan: rgba(138, 255, 239, 0.5);
+
+  /* Animation timing */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+/* Blinking cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Page fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle flicker for CRT effect */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.95; }
+  94% { opacity: 1; }
+}
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+/* Set background on html to prevent flash before CSS loads */
+html {
+  background-color: var(--bg-primary);
+}
+
 html body {
-  background-color: #1e1e1e;
-  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--bg-primary);
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
   padding: 1rem;
   max-width: 800px;
   margin: auto;
   line-height: 1.6;
-  color: #888 !important;
+  color: var(--text-primary) !important;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  animation: fadeIn 0.5s ease-out, flicker 8s infinite;
 }
 
-/* Navigation container */
+/* CRT Scanline overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.08) 1px,
+    rgba(0, 0, 0, 0.08) 2px
+  );
+  z-index: 9999;
+}
+
+/* CRT Vignette effect - darker edges */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 9998;
+}
+
+/* Custom text selection */
+::selection {
+  background: var(--accent-border);
+  color: var(--bg-primary);
+}
+
+::-moz-selection {
+  background: var(--accent-border);
+  color: var(--bg-primary);
+}
+
+/* =============================================================================
+   NAVIGATION
+   ============================================================================= */
 .nav-container {
   width: 100%;
   margin-bottom: 2rem;
 }
 
-/* Website name */
+/* Website name with phosphor glow */
 .website-name {
-  color: #9cffb3;
+  color: var(--accent-green);
   font-size: 1.1em;
   margin-bottom: 0.5rem;
+  text-shadow:
+    0 0 5px var(--glow-green),
+    0 0 10px var(--glow-green-soft),
+    0 0 20px var(--glow-green-faint);
 }
 
-/* Navigation */
+/* Navigation path */
 .nav-path {
-  color: #888;
+  color: var(--text-muted);
   margin-bottom: 0;
   padding-top: 0;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-path a {
-  color: #8affef;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  position: relative;
+  transition: text-shadow var(--transition-fast);
+}
+
+.nav-path a:hover {
+  text-shadow: 0 0 8px var(--glow-cyan);
 }
 
 .nav-path .separator {
   margin: 0 0.5rem;
-  color: #4caf50;
+  color: var(--accent-border);
 }
 
-/* Typography */
+/* Blinking cursor */
+.cursor {
+  color: var(--accent-green);
+  margin-left: 0.25rem;
+  animation: blink 1s step-end infinite;
+  text-shadow: 0 0 5px var(--glow-green);
+}
+
+/* =============================================================================
+   TYPOGRAPHY
+   ============================================================================= */
 h1,
 h2 {
-  border-bottom: 1px solid #4caf50;
+  border-bottom: 1px solid var(--accent-border);
   padding-bottom: 0.25rem;
-  color: #9cffb3;
+  color: var(--accent-green);
   margin-top: 0;
+  text-shadow:
+    0 0 5px var(--glow-green),
+    0 0 10px var(--glow-green-soft),
+    0 0 20px var(--glow-green-faint);
 }
 
 h1 {
   margin-top: 2rem;
 }
 
+h3 {
+  color: var(--accent-green);
+  text-shadow: 0 0 5px var(--glow-green-soft);
+}
+
+/* Links with animated underline */
 a {
-  color: #8affef;
-  text-decoration: underline;
+  color: var(--accent-cyan);
+  text-decoration: none;
+  position: relative;
+  transition: text-shadow var(--transition-fast);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-cyan);
+  transition: width var(--transition-medium);
+  box-shadow: 0 0 5px var(--glow-cyan);
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+/* Prevent underline animation on certain elements */
+.directory-listing a::after,
+.social-links a::after,
+.back-to-top::after,
+.tool-list h2 a::after {
+  display: none;
 }
 
 hr {
   border: none;
-  border-top: 1px solid #3a3a3a;
+  border-top: 1px solid var(--border-subtle);
   margin: 2rem 0;
 }
 
-/* Navigation */
-.nav-path {
-  color: #888;
-  margin-bottom: 0;
-  padding-top: 0;
-  line-height: 1;
-}
-
-.nav-path a {
-  color: #8affef;
-}
-
-.nav-path .separator {
-  margin: 0 0.5rem;
-  color: #4caf50;
-}
-
-/* Footer */
+/* =============================================================================
+   FOOTER
+   ============================================================================= */
 footer {
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.9em;
   margin-top: 3rem;
-  border-top: 1px solid #3a3a3a;
+  border-top: 1px solid var(--border-subtle);
   padding-top: 1rem;
 }
 
@@ -98,14 +278,40 @@ footer {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .social-links a {
   display: inline-flex;
   align-items: center;
-  font-size: 1rem;
-  gap: 0.5rem;
+  font-size: 0.9rem;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  background: var(--bg-secondary);
+  transition: all var(--transition-fast);
+  color: var(--text-muted);
+}
+
+.social-links a::before {
+  content: '[';
+  color: var(--accent-border);
+}
+
+.social-links a::after {
+  content: ']';
+  color: var(--accent-border);
+}
+
+.social-links a:hover {
+  border-color: var(--accent-border);
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--accent-green);
+}
+
+.social-links a:hover .social-icon {
+  fill: var(--accent-green);
 }
 
 .social-icon {
@@ -114,13 +320,38 @@ footer {
   fill: currentColor;
 }
 
-/* Directory listing */
+/* =============================================================================
+   DIRECTORY LISTING (ASCII Tree Style)
+   ============================================================================= */
+
+/* Tree command prompt */
+.tree-prompt {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  font-size: 0.95em;
+}
+
+.tree-prompt .prompt-symbol {
+  color: var(--accent-green);
+  margin-right: 0.5rem;
+}
+
+.tree-prompt .command {
+  color: var(--accent-cyan);
+}
+
+.tree-prompt .path {
+  color: var(--text-primary);
+}
+
 .directory-listing {
   margin: 2rem 0;
   padding: 1rem;
-  background-color: #252525;
-  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  border-radius: 2px;
   overflow-x: auto;
+  border-left: 2px solid var(--accent-border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .directory-listing .item {
@@ -128,20 +359,54 @@ footer {
   align-items: center;
   margin: 0.5rem 0;
   gap: 0.5rem;
+  transition: background var(--transition-fast);
+  padding: 0.25rem 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 2px;
 }
 
-.directory-listing .item::before {
-  content: "📁";
-  flex-shrink: 0;
+.directory-listing .item:hover {
+  background: rgba(156, 255, 179, 0.05);
 }
 
-.directory-listing .item.file::before {
-  content: "📄";
+/* ASCII tree branch characters */
+.directory-listing .item .tree-branch {
+  color: var(--accent-border);
+  font-weight: bold;
   flex-shrink: 0;
+  text-shadow: 0 0 5px var(--glow-green-faint);
+}
+
+/* Folder styling - cyan links with trailing slash */
+.directory-listing .item.folder a {
+  color: var(--accent-cyan);
+}
+
+.directory-listing .item.folder a::after {
+  content: '/';
+  color: var(--accent-border);
+  margin-left: 1px;
+}
+
+/* File styling - dimmer, no trailing slash */
+.directory-listing .item.file a {
+  color: var(--text-primary);
+}
+
+.directory-listing .item.file .tree-branch {
+  color: var(--text-muted);
+}
+
+/* Gap between files and folders */
+.directory-listing .item.file + .item.folder {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-subtle);
 }
 
 .directory-listing .item a {
-  color: #8affef;
+  color: var(--accent-cyan);
   flex: 1;
   min-width: 0;
   white-space: nowrap;
@@ -150,20 +415,26 @@ footer {
 }
 
 .directory-listing .item .size {
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.9em;
   flex-shrink: 0;
 }
 
-/* Welcome and intro text */
+/* =============================================================================
+   WELCOME AND INTRO TEXT
+   ============================================================================= */
 .welcome-message,
 .intro-text {
-  color: #888;
+  color: var(--text-muted);
   margin: 2rem 0;
   font-style: italic;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border-subtle);
 }
 
-/* Tool list */
+/* =============================================================================
+   TOOL LIST
+   ============================================================================= */
 .tool-list {
   list-style: none;
   padding: 0;
@@ -172,17 +443,21 @@ footer {
 .tool-list li {
   margin-bottom: 2rem;
   padding: 0.75rem 1rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  background: var(--bg-secondary);
 }
 
 .tool-list li:hover {
-  border-color: #4caf50;
-  background-color: #252525;
+  border-color: var(--accent-border);
+  border-left-color: var(--accent-green);
+  background-color: var(--bg-tertiary);
+  box-shadow: 0 0 15px var(--glow-green-faint);
 }
 
 .tool-list a {
@@ -190,6 +465,11 @@ footer {
   margin-bottom: 0.5rem;
   display: inline-block;
   flex: 1;
+}
+
+.tool-list h2 {
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .tool-tags {
@@ -200,55 +480,59 @@ footer {
 
 .tool-description {
   margin-top: 0.5rem;
-  color: #888;
+  color: var(--text-muted);
   line-height: 1.6;
   width: 100%;
 }
 
-/* Tool tags */
+/* =============================================================================
+   TOOL TAGS
+   ============================================================================= */
 .tool-tag {
   display: inline-flex;
   align-items: center;
-  font-size: 0.8em;
-  padding: 0.1rem 0.4rem;
+  font-size: 0.75em;
+  padding: 0.15rem 0.5rem;
   margin: 0.25rem 0.5rem 0.25rem 0;
   border-radius: 1px;
   font-weight: normal;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .tool-tag.free {
-  background-color: #1a472a;
-  color: #9cffb3;
-  border: 1px solid #4caf50;
+  background-color: var(--tag-free-bg);
+  color: var(--tag-free-text);
+  border: 1px solid var(--tag-free-border);
 }
 
 .tool-tag.paid {
-  background-color: #472a1a;
-  color: #ffb39c;
-  border: 1px solid #af504c;
+  background-color: var(--tag-paid-bg);
+  color: var(--tag-paid-text);
+  border: 1px solid var(--tag-paid-border);
 }
 
 .tool-tag.opensource {
-  background-color: #1a472a;
-  color: #9cffb3;
-  border: 1px solid #4caf50;
+  background-color: var(--tag-free-bg);
+  color: var(--tag-free-text);
+  border: 1px solid var(--tag-free-border);
 }
 
 .tool-tag.proprietary {
-  background-color: #472a1a;
-  color: #ffb39c;
-  border: 1px solid #af504c;
+  background-color: var(--tag-paid-bg);
+  color: var(--tag-paid-text);
+  border: 1px solid var(--tag-paid-border);
 }
 
 .tool-tag.fork {
-  background-color: #2a3b47;
-  color: #9cd8ff;
-  border: 1px solid #4c8faf;
+  background-color: var(--tag-fork-bg);
+  color: var(--tag-fork-text);
+  border: 1px solid var(--tag-fork-border);
 }
 
-/* Post list */
+/* =============================================================================
+   POST LIST
+   ============================================================================= */
 .post-list {
   list-style: none;
   padding: 0;
@@ -256,6 +540,16 @@ footer {
 
 .post-list li {
   margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.post-list li:hover {
+  border-left-color: var(--accent-green);
+  background: var(--bg-tertiary);
 }
 
 .post-list a {
@@ -263,15 +557,24 @@ footer {
 }
 
 .post-date {
-  color: #888;
-  font-size: 0.9em;
+  color: var(--accent-green);
+  font-size: 0.85em;
   margin-top: 0.25rem;
+  text-shadow: 0 0 3px var(--glow-green-faint);
 }
 
-/* Blog post */
+.post-list p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* =============================================================================
+   BLOG POST
+   ============================================================================= */
 .blog-post {
   margin: 2rem 0;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .blog-post * {
@@ -280,54 +583,148 @@ footer {
 
 .blog-post .post-meta,
 .blog-post .post-meta time {
-  color: #9cffb3;
+  color: var(--accent-green);
   margin: 0.5rem 0 1rem 0;
+  text-shadow: 0 0 3px var(--glow-green-faint);
 }
 
 .blog-post h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #9cffb3;
-  border-bottom: 1px solid #4caf50;
+  color: var(--accent-green);
+  border-bottom: 1px solid var(--accent-border);
   padding-bottom: 0.25rem;
+}
+
+.blog-post h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .blog-post p {
   margin-bottom: 1.5rem;
   line-height: 1.7;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .blog-post ul {
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
-  color: #888;
+  color: var(--text-muted);
 }
 
 .blog-post li {
   margin-bottom: 0.5rem;
-  color: #888;
+  color: var(--text-muted);
 }
 
-/* Back to top button */
+.blog-post a {
+  color: var(--accent-cyan);
+}
+
+/* Blockquotes styled as terminal output */
+.blog-post blockquote {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-border);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+}
+
+.blog-post blockquote::before {
+  content: "> ";
+  color: var(--accent-border);
+}
+
+/* Code blocks */
+.blog-post code {
+  background: var(--bg-secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.9em;
+  border: 1px solid var(--border-subtle);
+}
+
+.blog-post pre {
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 2px;
+  overflow-x: auto;
+  border-left: 3px solid var(--accent-border);
+}
+
+.blog-post pre code {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+/* =============================================================================
+   BACK TO TOP BUTTON
+   ============================================================================= */
 .back-to-top {
   display: inline-block;
-  color: #888;
+  color: var(--text-muted);
   font-size: 0.9em;
   margin-top: 2rem;
   padding: 0.5rem 1rem;
-  border: 1px solid #4caf50;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.back-to-top:hover {
-  color: #8affef;
-  border-color: #4caf50;
+  border: 1px solid var(--accent-border);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
   text-decoration: none;
 }
 
-/* Responsive Design */
+.back-to-top:hover {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  text-decoration: none;
+  background: rgba(156, 255, 179, 0.05);
+  text-shadow: 0 0 5px var(--glow-green-soft);
+  box-shadow: 0 0 10px var(--glow-green-faint);
+}
+
+/* =============================================================================
+   404 ERROR PAGE
+   ============================================================================= */
+.error-block {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-left: 3px solid var(--tag-paid-border);
+  margin: 2rem 0;
+  font-family: inherit;
+}
+
+.error-block .error-prefix {
+  color: var(--tag-paid-text);
+  font-weight: bold;
+}
+
+/* =============================================================================
+   TAG LEGEND
+   ============================================================================= */
+.tag-legend {
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 2px;
+  border: 1px solid var(--border-subtle);
+}
+
+.tag-legend h3 {
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+  font-size: 1em;
+}
+
+.tag-legend .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
 @media screen and (max-width: 600px) {
   body {
     padding: 1rem;
@@ -369,6 +766,21 @@ footer {
   .tool-tag {
     margin: 0.25rem 0.5rem 0.25rem 0;
   }
+
+  .nav-path {
+    font-size: 0.9em;
+  }
+
+  /* Reduce CRT effects on mobile for performance */
+  body::before {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 2px,
+      rgba(0, 0, 0, 0.05) 4px
+    );
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -381,27 +793,26 @@ footer {
   }
 
   .nav-path {
-    font-size: 0.9em;
+    font-size: 0.85em;
+  }
+
+  .website-name {
+    font-size: 1em;
   }
 }
 
-/* Tag legend */
-.tag-legend {
-  margin: 1rem 0 2rem 0;
-  padding: 1rem;
-  background-color: #252525;
-  border-radius: 4px;
-  border: 1px solid #3a3a3a;
-}
+/* =============================================================================
+   ACCESSIBILITY - Reduce motion for users who prefer it
+   ============================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 
-.tag-legend h3 {
-  color: #9cffb3;
-  margin-bottom: 0.5rem;
-  font-size: 1em;
-}
-
-.tag-legend .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  body::before,
+  body::after {
+    display: none;
+  }
 }
