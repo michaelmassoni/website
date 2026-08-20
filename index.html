@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#1e1e1e">
 
 <head>
+  <style>html,body{background:#1e1e1e!important}</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Michael Massoni's personal website - Cyber Security Analyst, Linux enthusiast, and privacy advocate. Explore my tools, thoughts, and professional background." />
+    content="Michael Massoni's personal website - Cyber Security Analyst, Linux enthusiast, and privacy advocate. Explore my thoughts and professional background." />
   <meta name="keywords" content="cyber security, linux, FOSS, privacy, homelab, security analyst, MSSP" />
   <meta name="author" content="Michael Massoni" />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Michael Massoni - Cyber Security Analyst" />
   <meta property="og:description"
-    content="Cyber Security Analyst, Linux enthusiast, and privacy advocate. Explore my tools, thoughts, and professional background." />
+    content="Cyber Security Analyst, Linux enthusiast, and privacy advocate. Explore my thoughts and professional background." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://michaelmassoni.com" />
   <title>michaelmassoni.com</title>
-  <link rel="stylesheet" href="styles.css?v=1.1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=2.2">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
@@ -30,26 +34,31 @@
   </div>
 
   <div class="directory-listing">
+    <div class="tree-prompt">
+      <span class="prompt-symbol">$</span>
+      <span class="command">ls</span>
+    </div>
     <div class="item file">
-      <a href="about.html">about-me</a>
+      <span class="tree-branch">├──</span>
+      <a href="about.html">about-me.txt</a>
       <span class="size">2.0 kB</span>
     </div>
     <div class="item file">
-      <a href="homelab.html">homelab</a>
+      <span class="tree-branch">├──</span>
+      <a href="homelab.html">homelab.txt</a>
       <span class="size">4.0 kB</span>
     </div>
-    <div class="item">
+    <div class="item folder">
+      <span class="tree-branch">├──</span>
       <a href="posts.html">blog-posts</a>
       <span class="size">2 items</span>
     </div>
-    <div class="item">
+    <div class="item folder">
+      <span class="tree-branch">└──</span>
       <a href="projects.html">projects</a>
-      <span class="size">4 items</span>
+      <span class="size">6 items</span>
     </div>
-    <div class="item">
-      <a href="tools.html">tools</a>
-      <span class="size">4 items</span>
-    </div>
+
   </div>
 
   <footer>

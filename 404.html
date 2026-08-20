@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#1e1e1e">
 <head>
+<style>html,body{background:#1e1e1e!important}</style>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Page not found - michaelmassoni.com" />
 <title>404 - michaelmassoni.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
@@ -15,18 +19,20 @@
       <a href="index.html">~</a>
       <span class="separator">/</span>
       <a href="404.html">404</a>
+      <span class="cursor">█</span>
     </div>
   </div>
   <h1>404</h1>
   
-  <div class="welcome-message">
-    Error 404: Page not found
+  <div class="error-block">
+    <span class="error-prefix">bash:</span> /path/not/found: No such file or directory
   </div>
   
   <div class="directory-listing">
-    <div class="item file">
+    <div class="item">
+      <span class="tree-branch">└──</span>
       <a href="index.html">cd ..</a>
-      <span class="size">2.0K</span>
+      <span class="size">Return home</span>
     </div>
   </div>
   
