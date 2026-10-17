@@ -1,0 +1,39 @@
+name: Site checks
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # weekly, to catch external links that rot
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+      - name: Validate HTML
+        run: npx --yes html-validate@11.16.1 '*.html' 'posts/*.html'
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --no-progress
+            --root-dir "${{ github.workspace }}"
+            --exclude 'linkedin\.com'
+            --exclude 'michaelmassoni\.com'
+            --exclude-path 404.html
+            --accept '200,429'
+            './**/*.html' feed.xml
+          fail: true

@@ -3,7 +3,30 @@
    A minimalist terminal aesthetic with CRT effects
    ============================================================================= */
 
-/* Font is loaded via <link> tag in HTML for non-blocking load */
+/* JetBrains Mono (SIL OFL 1.1, see fonts/OFL.txt), self-hosted */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-latin-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2');
+}
 
 /* =============================================================================
    CSS CUSTOM PROPERTIES (Variables)
@@ -14,16 +37,13 @@
   --bg-secondary: #1a1a1a;
   --bg-tertiary: #252525;
   --text-primary: #9a9a9a;
-  --text-muted: #888;
+  --text-muted: #8e8e8e;
   --accent-green: #9cffb3;
   --accent-cyan: #8affef;
   --accent-border: #4caf50;
   --border-subtle: #3a3a3a;
 
   /* Tag colors */
-  --tag-free-bg: #1a472a;
-  --tag-free-text: #9cffb3;
-  --tag-free-border: #4caf50;
   --tag-paid-bg: #472a1a;
   --tag-paid-text: #ffb39c;
   --tag-paid-border: #af504c;
@@ -162,6 +182,16 @@ body::after {
     0 0 20px var(--glow-green-faint);
 }
 
+.website-name a,
+.website-name a:hover {
+  color: inherit;
+  text-shadow: inherit;
+}
+
+.website-name a::after {
+  display: none;
+}
+
 /* Navigation path */
 .nav-path {
   color: var(--text-muted);
@@ -250,17 +280,21 @@ a:hover {
 }
 
 /* Prevent underline animation on certain elements */
-.directory-listing a::after,
-.social-links a::after,
+.directory-listing .item:not(.folder) a::after,
 .back-to-top::after,
 .tool-list h2 a::after {
   display: none;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--border-subtle);
-  margin: 2rem 0;
+/* Elements that reuse ::after for a text glyph instead of the underline */
+.directory-listing .item.folder a::after,
+.social-links a::after {
+  position: static;
+  display: inline;
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
 }
 
 /* =============================================================================
@@ -338,10 +372,6 @@ footer {
 
 .tree-prompt .command {
   color: var(--accent-cyan);
-}
-
-.tree-prompt .path {
-  color: var(--text-primary);
 }
 
 .directory-listing {
@@ -485,6 +515,37 @@ footer {
   width: 100%;
 }
 
+/* Homelab service list */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list li {
+  display: block;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.service-list li:last-child {
+  margin-bottom: 0;
+}
+
+.tool-list .service-list li:hover {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.tool-list .service-list a {
+  font-size: inherit;
+  margin-bottom: 0;
+  display: inline;
+}
+
 /* =============================================================================
    TOOL TAGS
    ============================================================================= */
@@ -498,30 +559,6 @@ footer {
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.tool-tag.free {
-  background-color: var(--tag-free-bg);
-  color: var(--tag-free-text);
-  border: 1px solid var(--tag-free-border);
-}
-
-.tool-tag.paid {
-  background-color: var(--tag-paid-bg);
-  color: var(--tag-paid-text);
-  border: 1px solid var(--tag-paid-border);
-}
-
-.tool-tag.opensource {
-  background-color: var(--tag-free-bg);
-  color: var(--tag-free-text);
-  border: 1px solid var(--tag-free-border);
-}
-
-.tool-tag.proprietary {
-  background-color: var(--tag-paid-bg);
-  color: var(--tag-paid-text);
-  border: 1px solid var(--tag-paid-border);
 }
 
 .tool-tag.fork {
@@ -697,29 +734,6 @@ footer {
 .error-block .error-prefix {
   color: var(--tag-paid-text);
   font-weight: bold;
-}
-
-/* =============================================================================
-   TAG LEGEND
-   ============================================================================= */
-.tag-legend {
-  margin: 1rem 0 2rem 0;
-  padding: 1rem;
-  background-color: var(--bg-secondary);
-  border-radius: 2px;
-  border: 1px solid var(--border-subtle);
-}
-
-.tag-legend h3 {
-  color: var(--accent-green);
-  margin-bottom: 0.5rem;
-  font-size: 1em;
-}
-
-.tag-legend .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 /* =============================================================================

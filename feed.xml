@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>michaelmassoni.com</title>
+  <subtitle>Posts on cyber security, Linux, privacy, and technology.</subtitle>
+  <link href="https://michaelmassoni.com/feed.xml" rel="self" />
+  <link href="https://michaelmassoni.com/posts" />
+  <id>https://michaelmassoni.com/</id>
+  <updated>2025-12-07T00:00:00Z</updated>
+  <author>
+    <name>Michael Massoni</name>
+  </author>
+
+  <entry>
+    <title>But Why Should I Care About Online Privacy?</title>
+    <link href="https://michaelmassoni.com/posts/but-why-should-i-care-about-online-privacy" />
+    <id>https://michaelmassoni.com/posts/but-why-should-i-care-about-online-privacy</id>
+    <published>2025-12-07T00:00:00Z</published>
+    <updated>2025-12-07T00:00:00Z</updated>
+    <summary>Privacy isn’t about hiding; it’s about control. Learn why online privacy matters for everyone, not just those with something to hide.</summary>
+  </entry>
+
+  <entry>
+    <title>Building My Minimalist Website</title>
+    <link href="https://michaelmassoni.com/posts/building-my-minimalist-website" />
+    <id>https://michaelmassoni.com/posts/building-my-minimalist-website</id>
+    <published>2025-05-29T00:00:00Z</published>
+    <updated>2025-05-29T00:00:00Z</updated>
+    <summary>The story behind building my minimalist personal website, focusing on simplicity and performance.</summary>
+  </entry>
+</feed>
