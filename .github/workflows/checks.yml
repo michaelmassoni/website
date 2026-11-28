@@ -32,6 +32,7 @@ jobs:
             --no-progress
             --root-dir "${{ github.workspace }}"
             --exclude 'linkedin\.com'
+            --exclude 'buymeacoffee\.com'
             --exclude 'michaelmassoni\.com'
             --exclude-path 404.html
             --accept '200,429'
